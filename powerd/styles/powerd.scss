@@ -1,0 +1,106 @@
+$fontSizeBadage: 9px;
+$sideBarColor: #ff7b4a;
+$colorWhite: #FFFFFF;
+
+.hide{
+  visibility: hidden;
+  display: none;
+}
+%gravity-center {
+  text-align: center;
+  vertical-align: middle;
+  height: 100%;
+}
+
+%gravity-bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.fd-menu-uc {
+  background: $sideBarColor;
+  @extend %gravity-bottom;
+  cursor: pointer;
+  &:active{
+    background: #ffa864;
+  }
+}
+.fred-global-modal{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+}
+
+.sidebar-menu {
+  margin-bottom: 45px;
+}
+
+body.fixed .fred-label-badage-sidebar {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  padding: 6px !important;
+  font-size: $fontSizeBadage;
+  border-radius: 10px;
+}
+
+body.fixed.sidebar-collapse .fred-label-badage-sidebar {
+  position: absolute;
+  right: 12px;
+  top: 6px;
+  padding: 2px !important;
+  font-size: $fontSizeBadage;
+  border-radius: 4px;
+}
+
+div.fred-note-item {
+  background: $colorWhite;
+  padding: 8px;
+  margin-bottom: 18px;
+  border-radius: 4px;
+}
+
+.fred-img-spacing {
+  margin-right: 12px;
+}
+
+ul.sidebar-menu {
+
+  li {
+    .fa {
+      font-size: 18px;
+      margin-left: -2px;
+    }
+    a {
+      border-left-color: transparent !important;
+    }
+    &.active {
+      .fa {
+        color: $sideBarColor !important;
+      }
+      a {
+        border-left-color: transparent !important;
+      }
+    }
+  }
+}
+div.fred-head-icon{
+  position: relative;
+  img{
+    position: absolute;
+    top:0;
+    border-width: 2px;
+    border-color: transparent !important;
+  }
+  input{
+    display: none;
+  }
+  canvas{
+    margin-top: -4px;
+    margin-left: -4px;
+  }
+}
