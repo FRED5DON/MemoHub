@@ -7,51 +7,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Starter</title>
+    <title>FLiker | 创建Noter</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="bootstrap/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="bootstrap/css/ionicons.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/AdminLTE.css">
+    <link rel="stylesheet" href="../dist/css/AdminLTE.css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
     -->
-    <link rel="stylesheet" href="dist/css/skins/skin-purple.min.css">
-    <link rel="stylesheet" href="powerd/styles/powerd.css">
+    <link rel="stylesheet" href="../dist/css/skins/skin-purple.min.css">
+    <link rel="stylesheet" href="../powerd/styles/powerd.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="bootstrap/js/html5shiv.min.js"></script>
-    <script src="bootstrap/js/respond.min.js"></script>
+    <script src="../bootstrap/js/html5shiv.min.js"></script>
+    <script src="../bootstrap/js/respond.min.js"></script>
     <![endif]-->
 </head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
 <body class="hold-transition skin-purple sidebar-mini sidebar-collapse fixed">
 <div class="wrapper">
 
@@ -93,7 +73,7 @@ desired effect
                                         <a href="#">
                                             <div class="pull-left">
                                                 <!-- User Image -->
-                                                <img src="dist/img/user2-160x160.jpg" class="img-circle"
+                                                <img src="../dist/img/user2-160x160.jpg" class="img-circle"
                                                      alt="User Image">
                                             </div>
                                             <!-- Message title and timestamp -->
@@ -179,14 +159,14 @@ desired effect
                         <!-- Menu Toggle Button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!-- The user image in the navbar-->
-                            <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
                             <span class="hidden-xs">Alexander Pierce</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
                             <li class="user-header">
-                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                 <p>
                                     Alexander Pierce - Web Developer
@@ -234,16 +214,16 @@ desired effect
             <ul class="sidebar-menu">
                 <!--<li class="header">HEADER</li>-->
                 <!-- Optionally, you can add icons to the links -->
-                <li class="active"><a href="#"><i class="fa fa-cube"></i> <span>首页</span></a></li>
+                <li><a href="../index.html"><i class="fa fa-cube"></i> <span>首页</span></a></li>
                 <li><a href="#"><i class="fa fa-at"></i> <span>与我相关</span></a></li>
                 <li>
-                    <a href="pgs/feature.html">
+                    <a href="#">
                         <i class="fa fa-flag-o"><span class="label-danger fred-label-badage-sidebar">9</span></i>
                         <span>我的PIE</span>
                     </a>
                 </li>
-                <li>
-                    <a href="pgs/compose.html">
+                <li class="active">
+                    <a>
                         <i class="fa fa-pencil"></i>
                         <span>发布</span>
                     </a>
@@ -265,7 +245,7 @@ desired effect
             <!-- /.sidebar-menu -->
             <div class="user-panel fd-menu-uc">
                 <div class="pull-left image">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
                     <p>Alexander Pierce</p>
@@ -279,221 +259,60 @@ desired effect
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <!--<section class="content-header">-->
-        <!--<h1>-->
-        <!--Page Header-->
-        <!--<small>Optional description</small>-->
-        <!--</h1>-->
-        <!--<ol class="breadcrumb">-->
-        <!--<li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>-->
-        <!--<li class="active">Here</li>-->
-        <!--</ol>-->
-        <!--</section>-->
-
         <!-- Main content -->
         <section class="content">
-
-            <!-- Your Page Content Here -->
-            <div class="box box-widget fred-note-item">
-                <div class="box-header with-border">
-                    <div class="user-block">
-                        <img class="img-circle" src="dist/img/user1-128x128.jpg" alt="user image">
-                        <span class="username"><a href="#">Jonathan Burke Jr.</a></span>
-                        <span class="description">Shared publicly - 7:30 PM Today</span>
-                    </div>
-                    <!-- /.user-block -->
-                    <div class="box-tools">
-
-                        <button class="btn btn-box-tool"><i class="fa fa-star-o"></i></button>
-                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                    </div>
-                    <!-- /.box-tools -->
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <!-- post text -->
-                    <p>Far far away, behind the word mountains, far from the
-                        countries Vokalia and Consonantia, there live the blind
-                        texts. Separated they live in Bookmarksgrove right at</p>
-
-                    <p>the coast of the Semantics, a large language ocean.
-                        A small river named Duden flows by their place and supplies
-                        it with the necessary regelialia. It is a paradisematic
-                        country, in which roasted parts of sentences fly into
-                        your mouth.</p>
-
-                    <!-- Attachment -->
-                    <div class="attachment-block clearfix">
-                        <img class="attachment-img" src="dist/img/photo1.png" alt="attachment image">
-
-                        <div class="attachment-pushed">
-                            <h4 class="attachment-heading"><a href="http://www.lipsum.com/">Lorem ipsum text
-                                generator</a></h4>
-
-                            <div class="attachment-text">
-                                Description about the attachment can be placed here.
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry... <a
-                                    href="#">more</a>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="box box-solid">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Folders</h3>
+                            <div class="box-tools">
+                                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                             </div>
-                            <!-- /.attachment-text -->
                         </div>
-                        <!-- /.attachment-pushed -->
-                    </div>
-                    <!-- /.attachment-block -->
-
-                    <!-- Social sharing buttons -->
-                    <button class="btn btn-default btn-xs"><i class="fa fa-share"></i> Share</button>
-                    <button class="btn btn-default btn-xs"><i class="fa fa-thumbs-o-up"></i> Like</button>
-                    <span class="pull-right text-muted">45 likes - 2 comments</span>
-                </div>
-                <!-- /.box-body -->
-                <div class="box-footer box-comments">
-                    <div class="box-comment">
-                        <!-- User image -->
-                        <img class="img-circle img-sm" src="dist/img/user3-128x128.jpg" alt="user image">
-
-                        <div class="comment-text">
-                      <span class="username">
-                        Maria Gonzales
-                        <span class="text-muted pull-right">8:03 PM Today</span>
-                      </span><!-- /.username -->
-                            It is a long established fact that a reader will be distracted
-                            by the readable content of a page when looking at its layout.
-                        </div>
-                        <!-- /.comment-text -->
-                    </div>
-                    <!-- /.box-comment -->
-                    <div class="box-comment">
-                        <!-- User image -->
-                        <img class="img-circle img-sm" src="dist/img/user5-128x128.jpg" alt="user image">
-
-                        <div class="comment-text">
-                      <span class="username">
-                        Nora Havisham
-                        <span class="text-muted pull-right">8:03 PM Today</span>
-                      </span><!-- /.username -->
-                            The point of using Lorem Ipsum is that it has a more-or-less
-                            normal distribution of letters, as opposed to using
-                            'Content here, content here', making it look like readable English.
-                        </div>
-                        <!-- /.comment-text -->
-                    </div>
-                    <!-- /.box-comment -->
-                </div>
-                <!-- /.box-footer -->
-                <div class="box-footer">
-                    <img class="img-responsive img-circle img-sm fred-img-spacing" src="dist/img/user4-128x128.jpg"
-                         alt="alt text">
-                    <!-- .img-push is used to add margin to elements next to floating images -->
-                    <div class="input-group">
-                        <input type="text" name="message" placeholder="Type Message ..." class="form-control">
-                      <span class="input-group-btn">
-                        <button type="button" class="btn btn-warning btn-flat">Send</button>
-                      </span>
-                    </div>
-                </div>
-                <!-- /.box-footer -->
-            </div>
-
-
-            <div class="post fred-note-item">
-                <div class="user-block">
-                    <img class="img-circle img-bordered-sm" src="dist/img/user1-128x128.jpg" alt="user image">
-                        <span class="username">
-                          <a href="#">Jonathan Burke Jr.</a>
-                          <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
-                        </span>
-                    <span class="description">Shared publicly - 7:30 PM today</span>
-                </div>
-                <!-- /.user-block -->
-                <p>
-                    Lorem ipsum represents a long-held tradition for designers,
-                    typographers and the like. Some people hate it and argue for
-                    its demise, but others ignore the hate as they create awesome
-                    tools to help create filler text for everyone from bacon lovers
-                    to Charlie Sheen fans.
-                </p>
-
-                <div class="row margin-bottom">
-                    <div class="col-sm-6">
-                        <img class="img-responsive" src="dist/img/photo1.png" alt="Photo">
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-sm-6">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <img class="img-responsive" src="dist/img/photo2.png" alt="Photo">
-                                <br>
-                                <img class="img-responsive" src="dist/img/photo3.jpg" alt="Photo">
+                        <div class="box-body no-padding">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="mailbox.html"><i class="fa fa-inbox"></i> Inbox <span class="label label-primary pull-right">12</span></a></li>
+                                <li><a href="#"><i class="fa fa-envelope-o"></i> Sent</a></li>
+                                <li><a href="#"><i class="fa fa-file-text-o"></i> Drafts</a></li>
+                                <li><a href="#"><i class="fa fa-filter"></i> Junk <span class="label label-warning pull-right">65</span></a></li>
+                                <li><a href="#"><i class="fa fa-trash-o"></i> Trash</a></li>
+                            </ul>
+                        </div><!-- /.box-body -->
+                    </div><!-- /. box -->
+                </div><!-- /.col -->
+                <div class="col-md-9">
+                    <div class="box box-solid">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">发布动态</h3>
+                        </div><!-- /.box-header -->
+                        <div class="box-body">
+                            <div class="form-group">
+                                <input class="form-control" placeholder="标题">
                             </div>
-                            <!-- /.col -->
-                            <div class="col-sm-6">
-                                <img class="img-responsive" src="dist/img/photo4.jpg" alt="Photo">
-                                <br>
-                                <img class="img-responsive" src="dist/img/photo1.png" alt="Photo">
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Subject:">
                             </div>
-                            <!-- /.col -->
-                        </div>
-                        <!-- /.row -->
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-                <ul class="list-inline">
-                    <li><a href="#" class="link-black text-sm"><i class="fa fa-share margin-r-5"></i> Share</a></li>
-                    <li><a href="#" class="link-black text-sm"><i class="fa fa-thumbs-o-up margin-r-5"></i> Like</a>
-                    </li>
-                    <li class="pull-right"><a href="#" class="link-black text-sm"><i
-                            class="fa fa-comments-o margin-r-5"></i> Comments (5)</a></li>
-                </ul>
-                <div class="box-footer box-comments">
-                    <div class="box-comment">
-                        <!-- User image -->
-                        <img class="img-circle img-sm" src="dist/img/user3-128x128.jpg" alt="user image">
-
-                        <div class="comment-text">
-                      <span class="username">
-                        Maria Gonzales
-                        <span class="text-muted pull-right">8:03 PM Today</span>
-                      </span><!-- /.username -->
-                            It is a long established fact that a reader will be distracted
-                            by the readable content of a page when looking at its layout.
-                        </div>
-                        <!-- /.comment-text -->
-                    </div>
-                    <!-- /.box-comment -->
-                    <div class="box-comment">
-                        <!-- User image -->
-                        <img class="img-circle img-sm" src="dist/img/user4-128x128.jpg" alt="user image">
-
-                        <div class="comment-text">
-                      <span class="username">
-                        Luna Stark
-                        <span class="text-muted pull-right">8:03 PM Today</span>
-                      </span><!-- /.username -->
-                            It is a long established fact that a reader will be distracted
-                            by the readable content of a page when looking at its layout.
-                        </div>
-                        <!-- /.comment-text -->
-                    </div>
-                    <!-- /.box-comment -->
-                </div>
-                <!-- /.box-footer -->
-                <div class="box-footer">
-                    <img class="img-responsive img-circle img-sm fred-img-spacing" src="dist/img/user4-128x128.jpg"
-                         alt="alt text">
-                    <!-- .img-push is used to add margin to elements next to floating images -->
-                    <div class="input-group">
-                        <input type="text" name="message" placeholder="Type Message ..." class="form-control">
-                      <span class="input-group-btn">
-                        <button type="button" class="btn btn-warning btn-flat">Send</button>
-                      </span>
-                    </div>
-                </div>
-                <!-- /.box-footer -->
-            </div>
-
+                            <div class="form-group">
+                                <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="btn btn-default btn-file">
+                                    <i class="fa fa-paperclip"></i> Attachment
+                                    <input type="file" name="attachment">
+                                </div>
+                                <p class="help-block">Max. 32MB</p>
+                            </div>
+                        </div><!-- /.box-body -->
+                        <div class="box-footer">
+                            <div class="pull-right">
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> 发布</button>
+                            </div>
+                            <button class="btn btn-default"><i class="fa fa-times"></i> 清空</button>
+                        </div><!-- /.box-footer -->
+                    </div><!-- /. box -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
         </section>
         <!-- /.content -->
     </div>
@@ -501,15 +320,12 @@ desired effect
 
     <!-- Main Footer -->
     <footer class="main-footer">
-        <div class="pull-up-load">
-            <i class="fa fa-refresh fa-spin"></i>&nbsp;&nbsp;
-            <small>正在加载，请稍后...</small>
-        </div>
         <!-- To the right -->
         <div class="pull-right hidden-xs">
+            Anything you want
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2016 <a href="#">SagoSoft</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2015 <a href="#">Company</a>.</strong> All rights reserved.
     </footer>
 
     <!-- Control Sidebar -->
@@ -592,14 +408,16 @@ desired effect
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 2.1.4 -->
-<script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
-<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- Bootstrap 3.3.5 -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../plugins/knob/jquery.knob.js"></script>
+
 <!-- AdminLTE App -->
-<script src="powerd/scripts/common_pre.js"></script>
-<script src="dist/js/app.js"></script>
-<script src="powerd/scripts/common.js"></script>
+<script src="../powerd/scripts/common_pre.js"></script>
+<script src="../dist/js/app.js"></script>
+<script src="../powerd/scripts/common.js"></script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
@@ -607,27 +425,63 @@ desired effect
      fixed layout. -->
 <script>
     $(document).ready(function () {
-        var isPageMax=false;
-        var mScrollHeight = 0; //滚动距离总长(注意不是滚动条的长度)
-        var mScrollTop = 0;   //滚动到的当前位置
-        var mWindowHeight = $(window).height();
-        var OFFSET = 10;
-        $(window).scroll(function (e) {
-            mScrollHeight = $("body")[0].scrollHeight;
-            mScrollTop = $("body")[0].scrollTop;
-            console.log(mScrollTop, mWindowHeight, mScrollHeight);
-            if (mScrollTop + mWindowHeight + OFFSET >= mScrollHeight) {
-                if ($(".pull-up-load").css("visibility") == 'hidden') {
-                    $(".pull-up-load").css("visibility", "visible");
-                    return;
-                }
-                if(isPageMax){
-                    if ($(".pull-up-load").css("visibility") == 'visible') {
-                        $(".pull-up-load").css("visibility", "hidden");
+        /* jQueryKnob */
+
+        $(".knob").knob({
+            /*change : function (value) {
+             //console.log("change : " + value);
+             },
+             release : function (value) {
+             console.log("release : " + value);
+             },
+             cancel : function () {
+             console.log("cancel : " + this.value);
+             },*/
+            draw: function () {
+
+                // "tron" case
+                if (this.$.data('skin') == 'tron') {
+
+                    var a = this.angle(this.cv)  // Angle
+                            , sa = this.startAngle          // Previous start angle
+                            , sat = this.startAngle         // Start angle
+                            , ea                            // Previous end angle
+                            , eat = sat + a                 // End angle
+                            , r = true;
+
+                    this.g.lineWidth = this.lineWidth;
+
+                    this.o.cursor
+                    && (sat = eat - 0.3)
+                    && (eat = eat + 0.3);
+
+                    if (this.o.displayPrevious) {
+                        ea = this.startAngle + this.angle(this.value);
+                        this.o.cursor
+                        && (sa = ea - 0.3)
+                        && (ea = ea + 0.3);
+                        this.g.beginPath();
+                        this.g.strokeStyle = this.previousColor;
+                        this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sa, ea, false);
+                        this.g.stroke();
                     }
+
+                    this.g.beginPath();
+                    this.g.strokeStyle = r ? this.o.fgColor : this.fgColor;
+                    this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false);
+                    this.g.stroke();
+
+                    this.g.lineWidth = 2;
+                    this.g.beginPath();
+                    this.g.strokeStyle = this.o.fgColor;
+                    this.g.arc(this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+                    this.g.stroke();
+
+                    return false;
                 }
             }
         });
+        /* END JQUERY KNOB */
     });
 
 </script>

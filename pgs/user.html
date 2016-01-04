@@ -13,7 +13,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Bootstrap 3.3.5 -->
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="../bootstrap/css/ionicons.min.css">
     <!-- Theme style -->
@@ -243,6 +243,12 @@ desired effect
                     </a>
                 </li>
                 <li>
+                    <a href="compose.html">
+                        <i class="fa fa-pencil"></i>
+                        <span>发布</span>
+                    </a>
+                </li>
+                <li>
                     <a href="#">
                         <i class="fa fa-gear"><span class="label-success fred-label-badage-sidebar">2</span></i>
                         <span>设置中心</span>
@@ -282,12 +288,21 @@ desired effect
                     <div class="box box-widget widget-user">
                         <!-- Add the bg color to the header using any of the bg-* classes -->
                         <div class="widget-user-header bg-aqua-active">
-                            <h3 class="widget-user-username">Alexander Pierce</h3>
-                            <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                            <div class="fred-level">
+                                <i class="icon iconfont icon-iconfontzsrank"><b class="level-value">12</b></i>
+                                <span class="exp-hover-mask">
+                                   <small> 经验值：<b id="exp-value">30</b></small>
+                                   <small> 还差 <b id="exp-offset-value">90</b> 升级</small>
+                                </span>
+                            </div>
+                            <h5 class="widget-user-username single-line">Alexander Pierce</h5>
+                            <small class="single-line">Someone famous in <cite title="Source Title">Source Title</cite>
+                            </small>
                         </div>
                         <div class="widget-user-image fred-head-icon">
                             <img class="img-circle" src="../dist/img/user1-128x128.jpg" alt="User Avatar">
-                            <input type="text"  data-readonly="true" class="knob" value="30" data-thickness="0.2" data-width="98" data-height="98" data-fgColor="#FF7B4A">
+                            <input type="text" data-readonly="true" class="knob" value="30" data-thickness="0.2"
+                                   data-width="98" data-height="98" data-fgColor="#FF7B4A">
                         </div>
                         <div class="box-footer">
                             <div class="row">
@@ -331,33 +346,38 @@ desired effect
                         <!-- /.box-header -->
                         <div class="box-body">
                             <blockquote>
-                                <small>您当前账户上共有 <i class="fa fa-fw fa-usd"></i>2,782 金币</small>
-                                <small>您当前账户上共有 <i class="fa fa-fw fa-bitcoin"></i>3,336,180元宝</small>
+                                <small class="fred-icon-gold">您当前账户上共有 <i class="fa fa-fw fa-usd"></i><b
+                                        class="fred-number-currency">2,782</b> 金币
+                                </small>
+                                <small class="fred-icon-gold">您当前账户上共有 <i class="fa fa-fw fa-bitcoin"></i><b
+                                        class="fred-number-currency">3,336,180</b> 元宝
+                                </small>
                             </blockquote>
                         </div>
                         <!-- /.box-body -->
                     </div>
-                    <div class="box box-primary">
+
+                    <div class="box box-solid">
                         <div class="box-header with-border">
-                            <h3 class="box-title">About Me</h3>
+                            <i class="fa fa-fw  fa-info"></i>
+
+                            <h3 class="box-title">我的资料</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                            <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
+                            <strong><i class="fa fa-book margin-r-5"></i> 学历</strong>
 
                             <p class="text-muted">
                                 B.S. in Computer Science from the University of Tennessee at Knoxville
                             </p>
-
                             <hr>
-
-                            <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+                            <strong><i class="fa fa-map-marker margin-r-5"></i> 所在城市</strong>
 
                             <p class="text-muted">Malibu, California</p>
 
                             <hr>
 
-                            <strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
+                            <strong><i class="fa fa-pencil margin-r-5"></i> 兴趣爱好</strong>
 
                             <p>
                                 <span class="label label-danger">UI Design</span>
@@ -369,12 +389,13 @@ desired effect
 
                             <hr>
 
-                            <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
+                            <strong><i class="fa fa-file-text-o margin-r-5"></i> 备注</strong>
 
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
                         </div>
                         <!-- /.box-body -->
                     </div>
+
                 </div>
                 <!-- /.col -->
                 <div class="col-md-8">
@@ -388,7 +409,7 @@ desired effect
                             <div class="tab-pane active" id="activity">
                                 <p class="text-muted">没有相关记录</p>
 
-                                    </div>
+                            </div>
                             <!-- /.tab-pane -->
                             <div class="tab-pane" id="timeline">
                                 <p class="text-muted">没有相关记录</p>
@@ -507,7 +528,7 @@ desired effect
 <!-- Bootstrap 3.3.5 -->
 <script src="../bootstrap/js/bootstrap.min.js"></script>
 <script src="../plugins/knob/jquery.knob.js"></script>
-<script>
+<!--<script>
     var AdminLTEOptions = {
         //Enable sidebar expand on hover effect for sidebar mini
         //This option is forced to true if both the fixed layout and sidebar mini
@@ -518,9 +539,10 @@ desired effect
         //Bootstrap.js tooltip
         enableBSToppltip: true
     };
-</script>
+</script>-->
 
 <!-- AdminLTE App -->
+<script src="../powerd/scripts/common_pre.js"></script>
 <script src="../dist/js/app.js"></script>
 <script src="../powerd/scripts/common.js"></script>
 

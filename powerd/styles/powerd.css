@@ -1,6 +1,13 @@
+@import url(icon.mk.css);
 .hide {
   visibility: hidden;
   display: none; }
+
+.fred-level span.exp-hover-mask {
+  z-index: 20;
+  padding: 6px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px #aaaaaa , 1px -1px 2px #aaaaaa ,-1px 1px 2px #aaaaaa,-1px -1px 2px #aaaaaa; }
 
 .fd-menu-uc {
   position: absolute;
@@ -60,7 +67,8 @@ ul.sidebar-menu li.active a {
   border-left-color: transparent !important; }
 
 div.fred-head-icon {
-  position: relative; }
+  position: relative;
+  cursor: pointer; }
   div.fred-head-icon img {
     position: absolute;
     top: 0;
@@ -71,5 +79,65 @@ div.fred-head-icon {
   div.fred-head-icon canvas {
     margin-top: -4px;
     margin-left: -4px; }
+
+.fred-icon-gold .fa {
+  font-size: 14px;
+  width: 20px;
+  color: #ff9023 !important;
+  text-shadow: rgba(255, 144, 35, 0.7) !important;
+  border: 2px solid rgba(255, 144, 35, 0.9);
+  padding: 2px !important;
+  margin-bottom: 2px;
+  margin-right: 2px;
+  border-radius: 10px; }
+.fred-icon-gold .fred-number-currency {
+  color: #FF4444 !important; }
+
+.fred-level {
+  cursor: pointer;
+  position: absolute;
+  right: 12px;
+  top: 6px; }
+  .fred-level .iconfont {
+    color: #FFFFFF; }
+  .fred-level .level-value {
+    color: #FFFFFF;
+    font-size: 12px; }
+  .fred-level span.exp-hover-mask {
+    position: absolute;
+    right: 1px;
+    width: 12em;
+    background: #ff7b4a;
+    display: none; }
+    .fred-level span.exp-hover-mask small {
+      display: block; }
+  .fred-level:hover span.exp-hover-mask {
+    display: block; }
+
+.single-line {
+  display: block;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.widget-user-header {
+  padding-top: 8px !important; }
+
+footer.main-footer {
+  position: relative; }
+
+div.pull-up-load {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background: #FFFFFF;
+  padding-top: 16px;
+  color: black;
+  vertical-align: middle;
+  visibility: hidden; }
 
 /*# sourceMappingURL=powerd.css.map */

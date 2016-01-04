@@ -312,27 +312,35 @@ function _init() {
     activate: function (toggleBtn) {
       //Get the screen sizes
       var screenSizes = $.AdminLTE.options.screenSizes;
-
+      var _this = this;
       //Enable sidebar toggle
       $(toggleBtn).on('click', function (e) {
         e.preventDefault();
-
+        var isExpanded=false;
         //Enable sidebar push menu
         if ($(window).width() > (screenSizes.sm - 1)) {
           if ($("body").hasClass('sidebar-collapse')) {
             $("body").removeClass('sidebar-collapse').trigger('expanded.pushMenu');
+            isExpanded=true;
           } else {
             $("body").addClass('sidebar-collapse').trigger('collapsed.pushMenu');
+            isExpanded=false;
           }
         }
         //Handle sidebar push menu for small screens
         else {
           if ($("body").hasClass('sidebar-open')) {
             $("body").removeClass('sidebar-open').removeClass('sidebar-collapse').trigger('collapsed.pushMenu');
+            isExpanded=true;
           } else {
             $("body").addClass('sidebar-open').trigger('expanded.pushMenu');
+            isExpanded=false;
           }
         }
+        if(typeof _this.onExpand =='function'){
+          _this.onExpand(isExpanded);
+        }
+
       });
 
       $(".content-wrapper").click(function () {
@@ -374,7 +382,8 @@ function _init() {
       if ($('body').hasClass('sidebar-expanded-on-hover')) {
         $('body').removeClass('sidebar-expanded-on-hover').addClass('sidebar-collapse');
       }
-    }
+    },
+    onExpand:null
   };
 
   /* Tree()

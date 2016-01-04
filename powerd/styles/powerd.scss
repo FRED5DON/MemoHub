@@ -1,10 +1,16 @@
 $fontSizeBadage: 9px;
 $sideBarColor: #ff7b4a;
 $colorWhite: #FFFFFF;
-
-.hide{
+@import "icon.mk.css";
+.hide {
   visibility: hidden;
   display: none;
+}
+%hover-tips {
+  z-index: 20;
+  padding: 6px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px #aaaaaa , 1px -1px 2px #aaaaaa ,-1px 1px 2px #aaaaaa,-1px -1px 2px #aaaaaa;
 }
 %gravity-center {
   text-align: center;
@@ -21,17 +27,18 @@ $colorWhite: #FFFFFF;
   background: $sideBarColor;
   @extend %gravity-bottom;
   cursor: pointer;
-  &:active{
+  &:active {
     background: #ffa864;
   }
 }
-.fred-global-modal{
+
+.fred-global-modal {
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 9999;
 }
 
@@ -88,19 +95,93 @@ ul.sidebar-menu {
     }
   }
 }
-div.fred-head-icon{
+
+div.fred-head-icon {
   position: relative;
-  img{
+  cursor: pointer;
+  img {
     position: absolute;
-    top:0;
+    top: 0;
     border-width: 2px;
     border-color: transparent !important;
   }
-  input{
+  input {
     display: none;
   }
-  canvas{
+  canvas {
     margin-top: -4px;
     margin-left: -4px;
   }
+}
+
+.fred-icon-gold {
+  .fa {
+    font-size: 14px;
+    width: 20px;
+    color: rgb(255, 144, 35) !important;
+    text-shadow: rgba(255, 144, 35, .7) !important;
+    border:2px solid rgba(255, 144, 35, .9);
+    padding: 2px !important;
+    margin-bottom: 2px;
+    margin-right: 2px;
+    border-radius: 10px;
+  }
+  .fred-number-currency {
+    color: #FF4444 !important;
+  }
+}
+.fred-level{
+  cursor: pointer;
+  position: absolute;
+  right: 12px;
+  top:6px;
+  .iconfont{
+    color:$colorWhite ;
+  }
+  .level-value{
+    color:$colorWhite ;
+    font-size: 12px;
+  }
+  span.exp-hover-mask{
+    position: absolute;
+    right: 1px;
+    width: 12em;
+    background: $sideBarColor;
+    @extend %hover-tips;
+    small{
+      display: block;
+    }
+    display: none;
+  }
+  &:hover{
+    span.exp-hover-mask{
+      display: block;
+    }
+  }
+}
+.single-line{
+  display:block;
+  word-break:keep-all;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.widget-user-header{
+  padding-top: 8px !important;
+}
+footer.main-footer{
+  position: relative;
+}
+div.pull-up-load{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background: $colorWhite;
+  padding-top: 16px;
+  color: black;
+  vertical-align: middle;
+  visibility: hidden;
 }

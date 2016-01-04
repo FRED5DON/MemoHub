@@ -1,33 +1,24 @@
 $(document).ready(function () {
 
-    //PHP 页面参数
-    var cfg_options={
-        "sb_c":"sidebar-collapse"
+
+    /**
+     * 监听侧边栏展开关闭【修改源码实现】
+     * @param isExpand
+     */
+    $.AdminLTE.pushMenu.onExpand = function (isExpand) {
+        saveConfigCache(isExpand);
     };
 
-
-    var _user = {
-        "id": 10028,
-        "name": "Fred",
-        "state": "0",
-        "lastTime": new Date().getTime()
-    };
-
-    var beforeGotoNextPage=function (){
-        var configs=localStorage.getItem("style_cfg")||{};
-        if($("body").hasClass(cfg_options.sb_c)){
-            configs.isCollapsed=1;
-        }else{
-            configs.isCollapsed=0;
+    var saveConfigCache = function (isExpand) {
+        var configs = $.getCFG();
+        if (isExpand) {
+            configs.isCollapsed = 1;
+        } else {
+            configs.isCollapsed = 0;
         }
+        localStorage.setItem("style_cfg", JSON.stringify(configs));
     };
 
-    //样式缓存参数
-
-    var configs=localStorage.getItem("style_cfg")||{};
-    if(configs.isCollapsed){
-        $("body").removeClass(cfg_options.sb_c);
-    }
     //渲染
 
     //顶部导航栏事件
@@ -37,9 +28,8 @@ $(document).ready(function () {
     $(".fd-menu-uc").on("click", function (e) {
         var kModalId = "global-modal";
         //如果已登录
-        if (_user.state == 1) {
-            beforeGotoNextPage();
-            location.href="pgs/user.html";
+        if ($._user.state == 1) {
+            location.href = "pgs/user.html";
         } else {
             //创建modals
             var gm = document.getElementById(kModalId);
@@ -99,6 +89,5 @@ $(document).ready(function () {
             });
         }
     });
-
 
 });
