@@ -6,17 +6,27 @@ $(document).ready(function () {
      * @param isExpand
      */
     $.AdminLTE.pushMenu.onExpand = function (isExpand) {
-        saveConfigCache(isExpand);
+        saveConfigCookieCache(isExpand);
     };
 
     var saveConfigCache = function (isExpand) {
-        var configs = $.getCFG();
+        var configs = envir.getCFG();
         if (isExpand) {
-            configs.isCollapsed = 1;
-        } else {
             configs.isCollapsed = 0;
+        } else {
+            configs.isCollapsed = 1;
         }
         localStorage.setItem("style_cfg", JSON.stringify(configs));
+    };
+
+    var saveConfigCookieCache = function (isExpand) {
+        var configs = envir.getCFG();
+        if (isExpand) {
+            configs.isCollapsed = 0;
+        } else {
+            configs.isCollapsed = 1;
+        }
+        envir.setCookie("style_cfg", JSON.stringify(configs),100);
     };
 
     //渲染
@@ -28,8 +38,8 @@ $(document).ready(function () {
     $(".fd-menu-uc").on("click", function (e) {
         var kModalId = "global-modal";
         //如果已登录
-        if ($._user.state == 1) {
-            location.href = "pgs/user.html";
+        if (envir._user.state == 1) {
+            location.href = "user.php";
         } else {
             //创建modals
             var gm = document.getElementById(kModalId);
@@ -37,11 +47,11 @@ $(document).ready(function () {
                 gm = document.createElement("div");
                 var htm = '<div class="login-box">' +
                     '<div class="login-logo">' +
-                    '<a href="index.html">返回首页</a>' +
+                    '<a href="index.php">返回首页</a>' +
                     '</div><!-- /.login-logo -->' +
                     '<div class="login-box-body"' +
                     '<p class="login-box-msg">登录Fliker</p>' +
-                    '<form action="index.html" method="post">' +
+                    '<form action="index.php" method="post">' +
                     '<div class="form-group has-feedback">' +
                     '<input type="email" class="form-control" placeholder="Email">' +
                     '<span class="glyphicon glyphicon-envelope form-control-feedback"></span>' +
@@ -67,8 +77,9 @@ $(document).ready(function () {
                     '<a class="btn btn-social-icon"><i class="fa fa-weibo"></i></a>&nbsp;&nbsp;' +
                     '</div><!-- /.social-auth-links -->' +
                     '<a href="#">忘记密码</a>&nbsp;&nbsp;&nbsp;&nbsp;' +
-                    '<a href="pgs/register.html" class="text-center">注册</a>' +
+                    '<a href="signup.php" class="text-center">注册</a>' +
                     '</div><!-- /.login-box-body -->';
+                console.log(htm);
                 gm.setAttribute("id", kModalId);
                 gm.setAttribute("class", "fred-global-modal");
                 gm.innerHTML = htm;

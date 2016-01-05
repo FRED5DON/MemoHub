@@ -6,12 +6,14 @@ $colorWhite: #FFFFFF;
   visibility: hidden;
   display: none;
 }
+
 %hover-tips {
   z-index: 20;
   padding: 6px;
   border-radius: 5px;
-  box-shadow: 1px 1px 2px #aaaaaa , 1px -1px 2px #aaaaaa ,-1px 1px 2px #aaaaaa,-1px -1px 2px #aaaaaa;
+  box-shadow: 1px 1px 2px #aaaaaa, 1px -1px 2px #aaaaaa, -1px 1px 2px #aaaaaa, -1px -1px 2px #aaaaaa;
 }
+
 %gravity-center {
   text-align: center;
   vertical-align: middle;
@@ -30,6 +32,13 @@ $colorWhite: #FFFFFF;
   &:active {
     background: #ffa864;
   }
+}
+
+.main-sidebar {
+  z-index: 9000;
+}
+.main-header{
+  z-index: 9001;
 }
 
 .fred-global-modal {
@@ -120,7 +129,7 @@ div.fred-head-icon {
     width: 20px;
     color: rgb(255, 144, 35) !important;
     text-shadow: rgba(255, 144, 35, .7) !important;
-    border:2px solid rgba(255, 144, 35, .9);
+    border: 2px solid rgba(255, 144, 35, .9);
     padding: 2px !important;
     margin-bottom: 2px;
     margin-right: 2px;
@@ -130,49 +139,54 @@ div.fred-head-icon {
     color: #FF4444 !important;
   }
 }
-.fred-level{
+
+.fred-level {
   cursor: pointer;
   position: absolute;
   right: 12px;
-  top:6px;
-  .iconfont{
-    color:$colorWhite ;
+  top: 6px;
+  .iconfont {
+    color: $colorWhite;
   }
-  .level-value{
-    color:$colorWhite ;
+  .level-value {
+    color: $colorWhite;
     font-size: 12px;
   }
-  span.exp-hover-mask{
+  span.exp-hover-mask {
     position: absolute;
     right: 1px;
     width: 12em;
     background: $sideBarColor;
     @extend %hover-tips;
-    small{
+    small {
       display: block;
     }
     display: none;
   }
-  &:hover{
-    span.exp-hover-mask{
+  &:hover {
+    span.exp-hover-mask {
       display: block;
     }
   }
 }
-.single-line{
-  display:block;
-  word-break:keep-all;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+
+.single-line {
+  display: block;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.widget-user-header{
+
+.widget-user-header {
   padding-top: 8px !important;
 }
-footer.main-footer{
+
+footer.main-footer {
   position: relative;
 }
-div.pull-up-load{
+
+div.pull-up-load {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -185,3 +199,4 @@ div.pull-up-load{
   vertical-align: middle;
   visibility: hidden;
 }
+
