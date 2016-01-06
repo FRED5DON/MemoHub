@@ -4,6 +4,7 @@ $configs=null;
 if(isset($_COOKIE['style_cfg'])){
     $configs=json_decode($_COOKIE['style_cfg'],true);
 }
+include_once "build/servo/env.php";
 ?>
 <!DOCTYPE html>
 <!--
@@ -38,6 +39,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="../bootstrap/js/html5shiv.min.js"></script>
     <script src="../bootstrap/js/respond.min.js"></script>
     <![endif]-->
+    <script>
+        window.envir= window.envir || {};
+        window.envir.hostConfig= JSON.parse('<?=json_encode(Env::getConfig()) ?>');
+    </script>
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -395,7 +400,6 @@ desired effect
 <!-- AdminLTE App -->
 <script src="../dist/js/app.js"></script>
 <script src="../powerd/scripts/common.js"></script>
-
 <script>
     $(document).ready(function () {
         var isPageMax=false;

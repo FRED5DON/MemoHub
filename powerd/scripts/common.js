@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-
     /**
      * 监听侧边栏展开关闭【修改源码实现】
      * @param isExpand
@@ -51,13 +50,13 @@ $(document).ready(function () {
                     '</div><!-- /.login-logo -->' +
                     '<div class="login-box-body"' +
                     '<p class="login-box-msg">登录Fliker</p>' +
-                    '<form action="index.php" method="post">' +
+                    //'<form action="index.php" method="post">' +
                     '<div class="form-group has-feedback">' +
-                    '<input type="email" class="form-control" placeholder="Email">' +
-                    '<span class="glyphicon glyphicon-envelope form-control-feedback"></span>' +
+                    '<input id="username" type="text" class="form-control" placeholder="帐号">' +
+                    '<span class="glyphicon glyphicon-user form-control-feedback"></span>' +
                     '</div>' +
                     '<div class="form-group has-feedback">' +
-                    '<input type="password" class="form-control" placeholder="Password">' +
+                    '<input  id="userpwd" type="password" class="form-control" placeholder="密码">' +
                     '<span class="glyphicon glyphicon-lock form-control-feedback"></span>' +
                     '</div>' +
                     '<div class="row">' +
@@ -70,7 +69,7 @@ $(document).ready(function () {
                     '    <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>' +
                     '</div><!-- /.col -->' +
                     '</div>' +
-                    '</form>' +
+                    //'</form>' +
                     '<div class="social-auth-links">' +
                     '<a class="btn btn-social-icon"><i class="fa fa-qq"></i></a>&nbsp;&nbsp;' +
                     '<a class="btn btn-social-icon"><i class="fa fa-wechat"></i></a>&nbsp;&nbsp;' +
@@ -79,11 +78,32 @@ $(document).ready(function () {
                     '<a href="#">忘记密码</a>&nbsp;&nbsp;&nbsp;&nbsp;' +
                     '<a href="signup.php" class="text-center">注册</a>' +
                     '</div><!-- /.login-box-body -->';
-                console.log(htm);
                 gm.setAttribute("id", kModalId);
                 gm.setAttribute("class", "fred-global-modal");
                 gm.innerHTML = htm;
                 $("body > .wrapper")[0].appendChild(gm);
+                $("[type='submit']").click(function(){
+                    $.fn.md5($("#userpwd").val());
+                    var data={
+                        "usrname":"fred",
+                        "usrpwd":$.fn.md5($("#userpwd").val())
+                    };
+                    window.envir.httpProxy.ajax(window.envir.hostConfig.userLogin,data,"POST",function(x,r){
+                        if(typeof x =='object'){
+                            //连接失败
+                        }else{
+                             var result=JSON.parse(x);
+                            if(result.code==0){
+                                //登陆成功
+                                $("#" + kModalId).addClass("hide");
+                            }else{
+                                //
+                                alert(result.msg);
+                            }
+                        }
+                        console.log(x,r);
+                    });
+                });
                 gm.addEventListener("click", function (e) {
                     if (e.target.nodeName == 'DIV' && e.target.getAttribute("id") === 'global-modal') {
                         $("#" + kModalId).addClass("hide");
@@ -92,6 +112,7 @@ $(document).ready(function () {
                         });
                     }
                 });
+
             } else {
                 $("#" + kModalId).removeClass("hide");
             }
@@ -100,5 +121,7 @@ $(document).ready(function () {
             });
         }
     });
+
+
 
 });
