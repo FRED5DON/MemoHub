@@ -78,6 +78,9 @@ div.fred-note-item {
   padding: 8px;
   margin-bottom: 18px;
   border-radius: 4px;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  column-break-inside: avoid;
 }
 
 .fred-img-spacing {
@@ -199,4 +202,22 @@ div.pull-up-load {
   vertical-align: middle;
   visibility: hidden;
 }
+/*
 
+@media screen and (max-width: 960px) {
+  .fred-col2-auto
+  {
+    -moz-column-count:1;
+    -webkit-column-count:1;
+    column-count:1;
+  }
+}
+@media screen and (min-width: 960px) {
+  .fred-col2-auto
+  {
+    -moz-column-count:2;
+    -webkit-column-count:2;
+    column-count:2;
+    height: auto;
+  }
+}*/
