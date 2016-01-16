@@ -1,5 +1,4 @@
 <?php
-
 class Env
 {
     public static $host = "http://localhost:3000/api/";

@@ -19,12 +19,6 @@
   .fd-menu-uc:active {
     background: #ffa864; }
 
-.main-header {
-  z-index: 9001; }
-
-.main-sidebar {
-  z-index: 9000; }
-
 .fred-global-modal {
   position: fixed;
   top: 0;
@@ -32,7 +26,7 @@
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 9999; }
+  z-index: 6999; }
 
 .sidebar-menu {
   margin-bottom: 45px; }
