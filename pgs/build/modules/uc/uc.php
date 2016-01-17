@@ -1,3 +1,8 @@
+<!-- Left side column. contains the logo and sidebar -->
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content">
 <div class="row">
     <div class="col-md-4">
         <!-- Widget: user widget style 1 -->
@@ -142,3 +147,7 @@
         <!-- /.nav-tabs-custom -->
     </div>
 </div>
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

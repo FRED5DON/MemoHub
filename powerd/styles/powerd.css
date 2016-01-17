@@ -7,7 +7,7 @@
   z-index: 20;
   padding: 6px;
   border-radius: 5px;
-  box-shadow: 1px 1px 2px #aaaaaa, 1px -1px 2px #aaaaaa, -1px 1px 2px #aaaaaa, -1px -1px 2px #aaaaaa; }
+  box-shadow: 1px 1px 2px #BBBBBB, 1px -1px 2px #BBBBBB, -1px 1px 2px #BBBBBB, -1px -1px 2px #BBBBBB; }
 
 .fd-menu-uc {
   position: absolute;
@@ -162,5 +162,27 @@ div.pull-up-load {
     height: auto;
   }
 }*/
+/*emoji-panel*/
+.overflow-y {
+  overflow-y: auto; }
+
+.emoji-panel-parent {
+  position: absolute;
+  margin-top: 4px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: -1px -1px 6px #BBBBBB, 1px -1px 6px #BBBBBB;
+  display: none; }
+  .emoji-panel-parent .tab-content {
+    padding: 0; }
+  .emoji-panel-parent .emoji-box {
+    margin-top: 2px; }
+    .emoji-panel-parent .emoji-box .emoji-link:hover {
+      background: #ff7b4a; }
+    .emoji-panel-parent .emoji-box .emoji-link a img {
+      margin: 6px !important; }
+  .emoji-panel-parent .nav-tabs-custom > .nav-tabs > li.active {
+    border-color: #BBBBBB; }
 
 /*# sourceMappingURL=powerd.css.map */

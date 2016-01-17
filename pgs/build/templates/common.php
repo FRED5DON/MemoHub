@@ -4,7 +4,7 @@ $configs = null;
 if (isset($_COOKIE['style_cfg'])) {
     $configs = json_decode($_COOKIE['style_cfg'], true);
 }
-include_once "servo/env.php";
+include("/../servo/env.php");
 ?>
 <!DOCTYPE html>
 <!--
@@ -13,36 +13,37 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html>
 <head>
-    <title><?=PAGE_TITLE?PAGE_TITLE:"Fliker" ?></title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!-- Tell the browser to be responsive to screen width -->
-<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-<!-- Bootstrap 3.3.5 -->
-<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="../bootstrap/css/font-awesome.min.css">
-<!-- Ionicons -->
-<link rel="stylesheet" href="../bootstrap/css/ionicons.min.css">
-<!-- Theme style -->
-<link rel="stylesheet" href="../dist/css/AdminLTE.css">
-<!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-                                                      page. However, you can choose any other skin. Make sure you
-      apply the skin class to the body tag so the changes take effect.
--->
-<link rel="stylesheet" href="../dist/css/skins/skin-purple.min.css">
-<link rel="stylesheet" href="../powerd/styles/powerd.css">
+    <title><?= PAGE_TITLE ? PAGE_TITLE : "Fliker" ?></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../bootstrap/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="../bootstrap/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/AdminLTE.css">
+    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+                                                          page. However, you can choose any other skin. Make sure you
+          apply the skin class to the body tag so the changes take effect.
+    -->
+    <link rel="stylesheet" href="../dist/css/skins/skin-purple.min.css">
+    <link rel="stylesheet" href="../powerd/styles/powerd.css">
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-<script src="../bootstrap/js/html5shiv.min.js"></script>
-<script src="../bootstrap/js/respond.min.js"></script>
-<![endif]-->
-<script>
-    window.envir = window.envir || {};
-    window.envir.hostConfig = JSON.parse('<?=json_encode(Env::getConfig()) ?>');
-</script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="../bootstrap/js/html5shiv.min.js"></script>
+    <script src="../bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+    <script>
+
+        window.envir = window.envir || {};
+        window.envir.hostConfig = JSON.parse('<?=json_encode(Env::getConfig()); ?>');
+    </script>
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -75,29 +76,15 @@ desired effect
 <?php include "header.php"; ?>
 <div class="wrapper">
 
-    <!-- Left side column. contains the logo and sidebar -->
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Main content -->
-        <section class="content">
-            <?=PAGE_CONTENT?include(PAGE_CONTENT):"" ?>
-        </section>
-        <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
 
-    <!-- Main Footer -->
-    <footer class="main-footer">
-        <div class="pull-up-load">
-            <i class="fa fa-refresh fa-spin"></i>&nbsp;&nbsp;
-            <small>正在加载，请稍后...</small>
-        </div>
-        <!-- To the right -->
-        <div class="pull-right hidden-xs">
-        </div>
-        <!-- Default to the left -->
-        <strong>Copyright &copy; 2016 <a href="#">SagoSoft</a>.</strong> All rights reserved.
-    </footer>
+    <?php
+    if (PAGE_CONTENT) {
+        include(PAGE_CONTENT);
+    }
+    if (HIDE_FOOTER != 1) {
+        include("footer.php");
+    }
+    ?>
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
@@ -183,7 +170,6 @@ desired effect
 <!-- Bootstrap 3.3.5 -->
 <script src="../bootstrap/js/bootstrap.min.js"></script>
 <script src="../plugins/knob/jquery.knob.js"></script>
-
 <!-- AdminLTE App -->
 <script>
     var AdminLTEOptions = {

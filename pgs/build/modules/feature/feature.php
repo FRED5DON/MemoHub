@@ -1,3 +1,8 @@
+<!-- Left side column. contains the logo and sidebar -->
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content">
 <!-- row -->
 <div class="row">
     <div class="col-md-12">
@@ -100,3 +105,8 @@
         </ul>
     </div><!-- /.col -->
 </div><!-- /.row -->
+
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

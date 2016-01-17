@@ -1,7 +1,7 @@
 <?php
 define("PAGE_TITLE", "用户中心");
 define("PAGE_CONTENT", "build/modules/uc/uc.php");
-include "build/common.php";
+include "build/templates/common.php";
 ?>
 <script>
     $(document).ready(function () {

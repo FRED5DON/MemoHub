@@ -1,3 +1,8 @@
+<!-- Left side column. contains the logo and sidebar -->
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content">
 <div class="fred-col2-auto">
     <!-- Your Page Content Here -->
     <div class="box box-widget fred-note-item">
@@ -301,3 +306,8 @@
         <!-- /.box-footer -->
     </div>
 </div>
+
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
