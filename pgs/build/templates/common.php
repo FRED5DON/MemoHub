@@ -166,6 +166,7 @@ desired effect
 <!-- jQuery 2.1.4 -->
 <script src="../powerd/scripts/common_pre.js"></script>
 <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="../powerd/scripts/jquery.lazyload.js"></script>
 <script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- Bootstrap 3.3.5 -->
 <script src="../bootstrap/js/bootstrap.min.js"></script>

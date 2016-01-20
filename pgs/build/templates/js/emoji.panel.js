@@ -2,7 +2,7 @@ var emoji_panel_template = {
     styles: {
         comment: 1
     },
-	metro:function (emos,_MAX) {
+	metro:function (emos,_MAX,callback) {
         var pages = Math.ceil(emos.length / _MAX);
         var node = document.createElement("div");
         node.className = "box";
@@ -28,7 +28,7 @@ var emoji_panel_template = {
             tabContent.push('</div>');
 
         }
-        tabs.push('<li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>');
+        tabs.push('<li class="pull-right"><a href="javascript:;" class="text-muted hide-emoji-panel" ><i class="fa fa-times"></i></a></li>');
         tabs.push('</ul>');
 
         temps.push('<div class="nav-tabs-custom">');
@@ -39,6 +39,7 @@ var emoji_panel_template = {
         temps.push('</div>');
 
         node.innerHTML = temps.join('');
+        this.initTabEvent(callback);
         return node;
     },
     standard: function (emos,_MAX) {
@@ -83,6 +84,22 @@ var emoji_panel_template = {
 
         node.innerHTML = temps.join('');
         return node;
+    },
+    initTabEvent:function(callback){
+        setTimeout(function(){
+            $('ul.nav-tabs > li a[data-toggle="tab"]').click(function(){
+                if(typeof callback =='function'){
+                    callback("tabClick",$(this)[0].hash);
+                }
+            });
+            $('a.hide-emoji-panel').click(function(){
+                $(".emoji-panel-parent").toggle();
+                if(typeof callback =='function'){
+                    callback("hideClick",null);
+                }
+            });
+        },50);
+
     }
 
 

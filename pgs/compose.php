@@ -4,47 +4,54 @@ define("PAGE_CONTENT", "build/modules/writer/publish.php");
 define("HIDE_FOOTER", 1);
 include "build/templates/common.php";
 ?>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="../powerd/scripts/emoji/emoji-list-with-image.js"></script>
-<script src="../powerd/scripts/emoji/punycode.min.js"></script>
-<script src="../powerd/scripts/emoji/emoji.js"></script>
-<script  type="text/javascript" src="../powerd/scripts/emoji/twemoji.min.js" ></script>
+
+<script src="../powerd/scripts/emoji/twemoji.min.js"></script>
 <script src="../pgs/build/templates/js/emoji.panel.js"></script>
-
-
 <script>
-    $(function(){
-         /*function mkEmojiPanel(listCallback){
-            $.get("https://api.github.com/repos/FRED5DON/htmso/contents/emoji/emojis",listCallback);
-        }
-        mkEmojiPanel(function(data){
-            var ja=JSON.parse(data);
-            alert();
-        });*/
-
-        var renderEmojiToPanel=function(){
-            var emos = getEmojiList()[0];//此处按需是否生成所有emoji
-            var _MAX=emos.length;//每页显示50个
-            var htmlNode=emoji_panel_template.standard(emos,_MAX);
-            $('.emoji-panel').html($(htmlNode).html());
-        };
-		var renderTwitterEmojiToPanel=function(){
+    $(function () {
+        /*function mkEmojiPanel(listCallback){
+         $.get("https://api.github.com/repos/FRED5DON/htmso/contents/emoji/emojis",listCallback);
+         }
+         mkEmojiPanel(function(data){
+         var ja=JSON.parse(data);
+         alert();
+         });*/
+        var status = [];
+        var renderTwitterEmojiToPanel = function () {
             var emos = twemoji.font;
-            var _MAX=emos.length;//每页显示50个
-            var htmlNode=emoji_panel_template.metro(emos,_MAX);
+            var _MAX = 200;//每页显示200个
+            var pages = Math.ceil(emos.length / _MAX);
+            for (var i = 0; i < pages; i++) {
+                status['emoji_page_' + i] = 0;
+            }
+            var htmlNode = emoji_panel_template.metro(emos, _MAX, function (event, sid) {
+                if (event == 'tabClick') {
+                    if (!status[sid.replace("#", "")]) {
+                        twemoji.parse($(sid)[0], {"size": 16});
+                        status[sid.replace("#", "")] = 1;
+                    }
+                } else {
+                    $("#compose-textarea").focus();
+                }
+            });
             $('.emoji-panel').html($(htmlNode).html());
+            twemoji.parse($(".nav-tabs")[0], {"size": 16});
         };
         renderTwitterEmojiToPanel();
-		twemoji.parse($(".emoji-panel")[0], {"size":16});
 
-        $('[data-fred-action="insertEmoji"]').bind("click",function(){
+
+        $('[data-fred-action="insertEmoji"]').bind("click", function () {
             $(".emoji-panel-parent").toggle();
+            $("#compose-textarea").focus();
+            if ($(".emoji-panel-parent").css("display") != "none" && status["emoji_page_0"] != 1) {
+                twemoji.parse($("#emoji_page_0")[0], {"size": 16});
+            }
         });
-        $(".emoji-link").bind("click",function(){
-			$("#compose-textarea").focus();
-			insertHtmlAtCaret($(this).html());
+        $(".emoji-link").bind("click", function () {
+            $("#compose-textarea").focus();
+            insertHtmlAtCaret(" " + $(this).html() + " ");
             //$("#compose-textarea")[0].appendChild($(this).clone().find("img")[0]);
-			//twemoji.parse($("#compose-textarea")[0], {"size":36});
+            //twemoji.parse($("#compose-textarea")[0], {"size":36});
         });
     });
 

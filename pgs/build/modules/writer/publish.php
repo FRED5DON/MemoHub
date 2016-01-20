@@ -5,19 +5,19 @@
     <section class="content">
 <div class="row">
     <div class="col-md-12">
-        <div class="box box-primary">
+        <div class="box box-comment">
             <div class="box-header with-border">
-                <h3 class="box-title">Compose New Message</h3>
+                <h3 class="box-title">创建Recall</h3>
             </div><!-- /.box-header -->
             <div class="box-body">
                 <div class="form-group">
-                    <input class="form-control" placeholder="To:">
+                    <input class="form-control" placeholder="标题">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" placeholder="Subject:">
+                    <input class="form-control" placeholder="简介">
                 </div>
                 <div class="form-group">
-                    <div id="compose-textarea" contenteditable="true" class="form-control" style="height: 10em">
+                    <div id="compose-textarea" contenteditable="true"  class="form-control" style="height: 10em">
                     </div>
                 </div>
                 <div class="form-group">
