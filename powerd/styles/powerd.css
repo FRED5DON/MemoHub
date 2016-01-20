@@ -166,6 +166,9 @@ div.pull-up-load {
 .overflow-y {
   overflow-y: auto; }
 
+#compose-textarea img {
+  margin: 1px; }
+
 .emoji-panel-parent {
   position: absolute;
   margin-top: 4px;
