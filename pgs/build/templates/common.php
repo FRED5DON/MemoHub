@@ -81,7 +81,7 @@ desired effect
     if (PAGE_CONTENT) {
         include(PAGE_CONTENT);
     }
-    if (HIDE_FOOTER != 1) {
+    if (defined("HIDE_FOOTER") && HIDE_FOOTER != 1) {
         include("footer.php");
     }
     ?>
