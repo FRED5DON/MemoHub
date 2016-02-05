@@ -1,0 +1,32 @@
+/*emoji-panel*/
+
+#compose-textarea img {
+  margin: 1px;
+}
+
+.emoji-panel-parent {
+  position: absolute;
+  margin-top: 4px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: -1px -1px 6px $shadowColor, 1px -1px 6px $shadowColor;
+  display: none;
+  .tab-content {
+    padding: 0;
+  }
+  .emoji-box {
+    margin-top: 2px;
+    .emoji-link {
+      &:hover {
+        background: $sideBarColor;
+      }
+      a img {
+        margin: 6px !important;
+      }
+    }
+  }
+  .nav-tabs-custom > .nav-tabs > li.active {
+    border-color: $shadowColor;
+  }
+}

@@ -1,0 +1,237 @@
+.hide {
+  visibility: hidden;
+  display: none;
+}
+
+.center-horizontal {
+  margin: 0 auto !important;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+%hover-tips {
+  z-index: 20;
+  padding: 6px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px $shadowColor, 1px -1px 2px $shadowColor, -1px 1px 2px $shadowColor, -1px -1px 2px $shadowColor;
+}
+
+//loading
+.fred-loading {
+  margin: 40% auto;
+  width: 150px;
+  text-align: center;
+}
+
+.fred-loading > div {
+  width: 16px;
+  height: 16px;
+  background-color: $sideBarColor;
+  border-radius: 8px;
+  display: inline-block;
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fred-loading .item1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.fred-loading .item2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+.fd-menu-uc {
+  background: $sideBarColor;
+  @extend %gravity-bottom;
+  cursor: pointer;
+  &:active {
+    background: $sideBarActiveBackColor;
+  }
+}
+
+.fred-global-modal {
+  @extend %modal-window;
+  background: $blackColorAlpha5;
+  z-index: $layerDialogTop;
+}
+
+.fred-gm {
+  background: $blackColorAlpha5;
+  @extend %modal-window;
+  z-index: $layerGlobalTop;
+  -webkit-animation: animationOpacity 0.7s both;
+  -o-animation: animationOpacity 0.7s both;
+  animation: animationOpacity 0.7s both;
+
+}
+
+.sidebar-menu {
+  margin-bottom: 45px;
+}
+
+body.fixed .fred-label-badage-sidebar {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  padding: 6px !important;
+  font-size: $fontSizeBadage;
+  border-radius: 10px;
+}
+
+body.fixed.sidebar-collapse .fred-label-badage-sidebar {
+  position: absolute;
+  right: 12px;
+  top: 6px;
+  padding: 2px !important;
+  font-size: $fontSizeBadage;
+  border-radius: 4px;
+}
+
+
+.fred-img-spacing {
+  margin-right: 12px;
+}
+
+ul.sidebar-menu {
+
+  li {
+    .fa {
+      font-size: 18px;
+      margin-left: -2px;
+    }
+    a {
+      border-left-color: transparent !important;
+    }
+    &.active {
+      .fa {
+        color: $sideBarColor !important;
+      }
+      a {
+        border-left-color: transparent !important;
+      }
+    }
+  }
+}
+
+div.fred-head-icon {
+  position: relative;
+  cursor: pointer;
+  img {
+    position: absolute;
+    top: 0;
+    border-width: 2px;
+    border-color: transparent !important;
+  }
+  input {
+    display: none;
+  }
+  canvas {
+    margin-top: -4px;
+    margin-left: -4px;
+  }
+}
+
+.fred-icon-gold {
+  .fa {
+    font-size: 14px;
+    width: 20px;
+    color: rgb(255, 144, 35) !important;
+    text-shadow: rgba(255, 144, 35, .7) !important;
+    border: 2px solid rgba(255, 144, 35, .9);
+    padding: 2px !important;
+    margin-bottom: 2px;
+    margin-right: 2px;
+    border-radius: 10px;
+  }
+  .fred-number-currency {
+    color: #FF4444 !important;
+  }
+}
+
+.fred-level {
+  cursor: pointer;
+  position: absolute;
+  right: 12px;
+  top: 6px;
+  .iconfont {
+    color: $colorWhite;
+  }
+  .level-value {
+    color: $colorWhite;
+    font-size: 12px;
+  }
+  span.exp-hover-mask {
+    position: absolute;
+    right: 1px;
+    width: 12em;
+    background: $sideBarColor;
+    @extend %hover-tips;
+    small {
+      display: block;
+    }
+    display: none;
+  }
+  &:hover {
+    span.exp-hover-mask {
+      display: block;
+    }
+  }
+}
+
+.single-line {
+  display: block;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.widget-user-header {
+  padding-top: 8px !important;
+}
+
+footer.main-footer {
+  position: relative;
+}
+
+div.pull-up-load {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background: $colorWhite;
+  padding-top: 16px;
+  color: black;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+/*
+
+@media screen and (max-width: 960px) {
+  .fred-col2-auto
+  {
+    -moz-column-count:1;
+    -webkit-column-count:1;
+    column-count:1;
+  }
+}
+@media screen and (min-width: 960px) {
+  .fred-col2-auto
+  {
+    -moz-column-count:2;
+    -webkit-column-count:2;
+    column-count:2;
+    height: auto;
+  }
+}*/

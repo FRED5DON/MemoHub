@@ -123,7 +123,7 @@ win.insertHtmlAtCaret=function(html) {
 	// IE < 9
 	document.selection.createRange().pasteHTML(html);
 	}
-}
+};
 
     win.envir = envir;
 })(window);

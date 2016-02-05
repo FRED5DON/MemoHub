@@ -1,0 +1,9 @@
+div.fred-note-item {
+  background: $colorWhite;
+  padding: 8px;
+  margin-bottom: 18px;
+  border-radius: 4px;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  column-break-inside: avoid;
+}
